@@ -32,7 +32,7 @@ h1 { margin: 0; font-family: var(--font-poppins), sans-serif; font-size: 1.5rem;
 .socials { display: flex; gap: .25rem; margin: 0; padding: 0; list-style: none; }
 .socials a { display: grid; place-items: center; width: 2.75rem; height: 2.75rem; border-radius: 50%; color: white; }
 .social-ring { display: grid; place-items: center; width: 2rem; height: 2rem; border: 1px solid currentColor; border-radius: 50%; }
-.social-ring svg { width: auto; height: .875rem; }
+.social-ring svg { width: .875rem; height: .875rem; }
 .socials a:hover { color: var(--pink); }
 .attribution { margin: 0; font-size: 1rem; line-height: 1.5; text-align: center; }
 .attribution a { display: inline-block; min-height: 2.75rem; padding-block: .625rem; text-decoration: underline; }
@@ -51,7 +51,7 @@ h1 { margin: 0; font-family: var(--font-poppins), sans-serif; font-size: 1.5rem;
   .socials { gap: .75rem; }
   .socials a { width: 2.75rem; height: 2.75rem; }
   .social-ring { width: 2.5rem; height: 2.5rem; }
-  .social-ring svg { height: 1.125rem; }
+  .social-ring svg { width: 1.125rem; height: 1.125rem; }
 }
 
 @media (min-width: 64rem) {
