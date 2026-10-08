@@ -108,3 +108,18 @@ test("content and social links work without JavaScript", async ({ browser, baseU
     await context.close();
   }
 });
+
+/* QA sweep October 8 (ICN2): the three social glyphs rendered 8, 17 and 14 px wide in their rings. */
+test("the social icons share one square size at every layout", async ({ page }) => {
+  for (const width of [320, 768, 1440]) {
+    await page.setViewportSize({ width, height: 900 });
+    await page.goto("/");
+    const sizes = await page.locator(".socials svg").evaluateAll(icons => icons.map(icon => {
+      const box = icon.getBoundingClientRect();
+      return `${Math.round(box.width)}x${Math.round(box.height)}`;
+    }));
+    expect(sizes, `at ${width}`).toHaveLength(3);
+    expect(new Set(sizes).size, `sizes ${sizes.join(", ")} at ${width}`).toBe(1);
+    expect(sizes[0].split("x")[0]).toBe(sizes[0].split("x")[1]);
+  }
+});
